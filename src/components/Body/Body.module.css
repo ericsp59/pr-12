@@ -1,0 +1,8 @@
+.body {
+    border: 1px solid gray;
+    height: 80vh;
+}
+
+.body h3 {
+    text-align: center;
+}

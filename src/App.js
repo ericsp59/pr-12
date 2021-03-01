@@ -1,5 +1,6 @@
 import './App.css';
 import HeaderContainer from '../src/components/Header/HeaderContainer';
+import BodyContainer from '../src/components/Body/BodyContainer';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <div className={'row'}>
         <div className={'col-sm-12'}>
           <div>
-            <h3>body</h3>
+            <BodyContainer/>
           </div>
         </div>
       </div>
