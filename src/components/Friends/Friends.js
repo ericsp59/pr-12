@@ -1,10 +1,17 @@
 import React from 'react';
 
-const Friends = (props) => {
+const Friends = ({friends}) => {
+  console.log(friends)
   return (
     <div>
       <h3>Friends</h3>
-        <button onClick={props.getFriendsIds}>props.getFriendsIds</button>
+        {friends && friends.map(friend => { 
+          return (
+            <div key={friend.id}>
+              <span>{friend.first_name} {friend.last_name}</span>
+            </div>
+          )
+        })}
     </div>
   )
 }

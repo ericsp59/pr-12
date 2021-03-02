@@ -5,12 +5,13 @@ import { compose } from 'redux'
 import {getFriendsIds} from '../../redux/friends-reducer'
 
 const FriendsContainer = (props) => {
-  console.log(props)
+  // console.log(props)
 
-  useEffect(props.getFriendsIds, props.t)
+
+  useEffect(props.getFriendsIds, [props.t])
 
   return (
-    <Friends getFriendsIds={props.getFriendsIds}/>
+    <Friends friends={props.friends}/>
   )
 }
 
