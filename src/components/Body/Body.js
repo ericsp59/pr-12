@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Body.module.css';
+import {getUsers} from '../../api/api'
 
 const Body = (props) => {
 
@@ -10,5 +11,6 @@ const Body = (props) => {
 
     )
 }
+getUsers()
 
 export default Body
