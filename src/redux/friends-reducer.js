@@ -11,6 +11,7 @@ const friendsReducer = (state = initialState, action) => {
   switch (action.type) {
 
     case SET_USERS_ACCESS: 
+      console.log(action)
       return {
         ...state,
         items: action.items
@@ -22,13 +23,16 @@ const friendsReducer = (state = initialState, action) => {
 
 
 
-export const getFriendsIds = () => async (dispatch) => {
-  await friendsAPI.getFriendsIds( (err, data) => {
+export const getFriendsIds = (t) => (dispatch) => {
+
+  friendsAPI.getFriendsIds((err, data) => {
     if (err) console.log(err)
     else {
       console.log(data.response.items)
+      dispatch(setUserAccess(data.response.items))
     }
   })
+  
   
 }
 
