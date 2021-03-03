@@ -2,6 +2,7 @@ import  s from './App.module.css';
 import HeaderContainer from '../src/components/Header/HeaderContainer';
 import ProfileContainer from '../src/components/Profile/ProfileContainer';
 import FriendsContainer from '../src/components/Friends/FriendsContainer';
+import WallContainer from '../src/components/Wall/WallContainer';
 import Nav from '../src/components/Nav/Nav';
 import { BrowserRouter, withRouter, Route, Switch } from 'react-router-dom';
 import { compose } from 'redux';
@@ -26,9 +27,10 @@ function App() {
         <div className={`col-sm-10`}>
           <div className={s.body}>
             <Switch>
-              <Route exact path='/' render={() => (<ProfileContainer/>)}/>
+              {/* <Route exact path='/' render={() => (<ProfileContainer/>)}/> */}
               <Route exact path='/Profile' render={() => (<ProfileContainer/>)}/>
               <Route exact path='/friends' render={() => (<FriendsContainer/>)}/>
+              <Route exact path='/wall' render={() => (<WallContainer/>)}/>
               <Route path='*' render={() => <div>404 NOT </div>}/>
             </Switch>
           </div>

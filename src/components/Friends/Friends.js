@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Friends = ({friends}) => {
-  console.log(friends)
+const Friends = ({friends, totalCount}) => {
+
+
   return (
     <div>
       <h3>Friends</h3>
+
         {friends && friends.map(friend => { 
           return (
             <div key={friend.id}>
@@ -15,5 +17,6 @@ const Friends = ({friends}) => {
     </div>
   )
 }
+
 
 export default Friends

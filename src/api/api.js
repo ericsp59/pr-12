@@ -17,33 +17,32 @@
 import jsonp from 'jsonp'
 
 const baseURL = `https://api.vk.com/method`
-const access_token = `ea74e298425fc04bddcf10ccc5214232a2b9f06c0af6447b27b4f1b229d90499ff4bc983efa1e9909b7d6`
-const queryParams = `?v=5.52&fields=nickname, domain, sex, bdate, city, country, timezone, photo_50, photo_100, photo_200_orig, has_mobile, contacts, education, online, relation, last_seen, status, can_write_private_message, can_see_all_posts, can_post, universities,domain&count=20&access_token=${access_token}`
+//const access_token = `ea74e298425fc04bddcf10ccc5214232a2b9f06c0af6447b27b4f1b229d90499ff4bc983efa1e9909b7d6`
+const access_token = `80db923e6c47197f203828987c401cd343bd34e4540807198ae4560b5b39e58e8e58647e9ef516280b091`
+
+
+
+
 
 export const friendsAPI = {
-    url: `${baseURL}/friends.`,
-
-
-    // getOnline () {
-    //   jsonp(`${this.url}getOnline${queryParams}`, null, (err, data) => {
-    //     // if (err) {
-    //     //   console.error(err.message);
-    //     // } else {
-    //     //   console.log(data);
-    //     // }
-    //   });
-    // },
-
-    getFriendsIds (test) {
-        return jsonp(`${this.url}get${queryParams}`, null, (err, data) => {
-        test (err, data)
+  queryParams: `?v=5.52&fields=nickname, domain, sex, bdate, city, country, timezone, photo_50, photo_100, photo_200_orig, has_mobile, contacts, education, online, relation, last_seen, status, can_write_private_message, can_see_all_posts, can_post, universities,domain`,
+  friends: `${baseURL}/friends.`,
+  getFriendsReq (count, offset, cb) {
+      return jsonp(`${this.friends}get${this.queryParams}&count=${count}&offset=${offset}&access_token=${access_token}`, null, (err, data) => {
+          cb (err, data)
         });
-    },
-
-
-
+  },
 }
 
+export const wallAPI = {
+  wall: `${baseURL}/wall.`,
+  queryParams: `?v=5.21`,
+  getWallReq (cb) {
+    return jsonp(`${this.wall}get${this.queryParams}&&access_token=${access_token}`, null, (err, data) => {
+      cb (err, data)
+    });
+  },
+}
 
 
 

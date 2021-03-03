@@ -15,6 +15,10 @@ const Nav = () => {
             <span>Friends</span>
           </NavLink></li>
 
+        <li><NavLink to='/wall'>
+            <span>Wall</span>
+          </NavLink></li>
+
       </ul>
     </nav>
   )

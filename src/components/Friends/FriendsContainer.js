@@ -2,27 +2,29 @@ import React, {useEffect} from 'react';
 import Friends from './Friends'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-import {getFriendsIds} from '../../redux/friends-reducer'
+import {getFriends} from '../../redux/friends-reducer'
 
-const FriendsContainer = (props) => {
-  // console.log(props)
+const FriendsContainer = ({count, offset, getFriends, friends, totalCount}) => {
 
 
-  useEffect(props.getFriendsIds, [props.t])
+  useEffect(() => getFriends(count, offset), [totalCount])
 
   return (
-    <Friends friends={props.friends}/>
+    <Friends friends={friends} totalCount={totalCount}/>
   )
 }
 
 const mapStateToProps = (state) => {
   return {
     friends: state.friendsPage.items,
-    t: 1
+    count: state.friendsPage.count,
+    totalCount: state.friendsPage.totalCount,
+    offset: state.friendsPage.offset
+    // t: 1
 
   }
 }
 
 export default compose(
-  connect(mapStateToProps, {getFriendsIds})
+  connect(mapStateToProps, {getFriends})
 )(FriendsContainer)
