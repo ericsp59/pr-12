@@ -4,19 +4,19 @@ import { compose } from 'redux'
 import Wall from './Wall';
 import {getWallPosts} from '../../redux/wall-reducer';
 
-const WallContainer = ({getWallPosts,postsCount}) => {
+const WallContainer = ({getWallPosts, wallPostsCount, wallPosts}) => {
 
-  useEffect(() => getWallPosts(), [postsCount])
+  useEffect(() => getWallPosts(), [])
 
   return (
-    <Wall/>
+    <Wall wallPosts={wallPosts} wallPostsCount={wallPostsCount}/>
   )
 }
 
 const mapStateToProps = (state) => {
   return {
-    wallPosts: state.wallPage.items,
-    WallPostsCount: state.wallPage.count
+    wallPosts: state.wallPage.wallPosts,
+    wallPostsCount: state.wallPage.wallPostsCount
   }
 }
 

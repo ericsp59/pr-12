@@ -1,0 +1,8 @@
+.postWrapper {
+  width: auto;
+  height: auto;
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 5px;
+  background-color: rgb(226, 222, 222);
+}

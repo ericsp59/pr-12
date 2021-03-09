@@ -36,7 +36,7 @@ export const friendsAPI = {
 
 export const wallAPI = {
   wall: `${baseURL}/wall.`,
-  queryParams: `?v=5.21`,
+  queryParams: `?v=5.21&count=30`,
   getWallReq (cb) {
     return jsonp(`${this.wall}get${this.queryParams}&&access_token=${access_token}`, null, (err, data) => {
       cb (err, data)

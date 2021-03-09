@@ -40,9 +40,9 @@ function App() {
 
       <div className={'row'}>
         <div className={'col-sm-12'}>
-          <footer>
+          {/* <footer>
             <h3>footer</h3>
-          </footer>
+          </footer> */}
         </div>
       </div>
     </div>
