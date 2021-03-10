@@ -1,8 +1,32 @@
-.postWrapper {
+.post {
   width: auto;
   height: auto;
   border: 1px solid grey;
+  border-radius: 20px;
   padding: 10px;
   margin: 5px;
   background-color: rgb(226, 222, 222);
+}
+
+.post__postText {
+  font-size: .8em;
+}
+
+.post__postAttachmens__photo
+img {
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.post__postAttachmens__audio
+audio {
+  width: 80%;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.post__postAttachmens__audio
+p {
+  margin: 0px;
 }
