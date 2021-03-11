@@ -1,5 +1,6 @@
 import {wallAPI} from '../api/api'
 // import jsonp from 'jsonp'
+// import {store} from './redux-store'
 
 const initialState = {
   'wallPostsCount': null,
@@ -38,6 +39,10 @@ export const getWallPosts = () => (dispatch) => {
   })
 }
 
+export const addWallPost = (post) => (dispatch) => {
+  console.log(`add wall post ${post}`)
+  // console.log(store)
+}
 
 const setWallPostSuccess = (wallPostItems) => ({type: SET_WALL_POST_SUCCESS, wallPostItems})
 const setWallPostsCountSuccess = (wallPostsCount) => ({type: SET_WALL_POSTS_COUNT_SUCCESS, wallPostsCount})

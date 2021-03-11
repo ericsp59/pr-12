@@ -7,9 +7,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <MainApp />
-  </React.StrictMode>,
+  // </React.StrictMode>
+  ,
   document.getElementById('root')
 );
 
